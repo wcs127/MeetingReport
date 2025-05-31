@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>社工組114年5月主管會議提報資料</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/framer-motion/11.0.8/motion.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script> <!-- For labels on charts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #000000;
+            color: #E0E0E0;
+            font-family: 'Noto Sans TC', 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        .report-section {
+            min-height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            box-sizing: border-box;
+            border-bottom: 1px solid #222;
+        }
+        .bento-grid {
+            display: grid;
+            gap: 20px;
+            width: 100%;
+            max-width: 1600px;
+        }
+        .bento-cell {
+            background-color: rgba(26, 26, 26, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 1.5rem;
+            border: 1px solid rgba(51, 51, 51, 0.7);
+            overflow: hidden;
+            display: flex; /* For easier centering of charts or aligning content */
+            flex-direction: column;
+        }
+        .highlight-blue { color: #00AEEF; }
+        .highlight-green { color: #39FF14; }
+        .highlight-pink { color: #FF00FF; }
+        .bg-highlight-blue-gradient { background: linear-gradient(135deg, rgba(0, 174, 239, 0.3) 0%, rgba(0, 174, 239, 0.05) 100%); }
+        .bg-highlight-green-gradient { background: linear-gradient(135deg, rgba(57, 255, 20, 0.3) 0%, rgba(57, 255, 20, 0.05) 100%); }
+        .bg-highlight-pink-gradient { background: linear-gradient(135deg, rgba(255, 0, 255, 0.3) 0%, rgba(255, 0, 255, 0.05) 100%); }
+
+        .super-text { font-size: 6rem; font-weight: 900; line-height: 1; }
+        .main-title-text { font-size: 4rem; font-weight: 700; }
+        .sub-title-text { font-size: 2rem; font-weight: 700; }
+        .eng-accent { font-size: 0.875rem; color: #888888; text-transform: uppercase; letter-spacing: 0.1em; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; /* Add some space below tables */ }
+        th, td { border: 1px solid #444; padding: 8px 12px; text-align: center; font-size: 0.9rem; }
+        th { background-color: #2a2a2a; font-weight: bold; }
+        .chart-container { position: relative; width:100%; flex-grow: 1; display: flex; justify-content: center; align-items: center; }
+        .chart-container.fixed-height-450 { height: 450px; min-height: 450px; flex-grow: 0; /* For specific charts that need fixed height */ }
+        .chart-container.fixed-height-400 { height: 400px; min-height: 400px; flex-grow: 0; }
+        .chart-container.doughnut { max-height: 300px; /* Constrain doughnut chart height */ }
+        .chart-container.bar-horizontal { min-height: 350px; /* Ensure enough height for horizontal bar labels */ }
+        .chart-container.stacked-bar { min-height: 450px; /* Ensure enough height for stacked bar */ }
+
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #1a1a1a; }
+        ::-webkit-scrollbar-thumb { background: #555; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #777; }
+    </style>
+</head>
+<body>
+    <main id="app">
+
+        <!-- Page 1: Title -->
+        <motion.section class="report-section" data-initial='{ "opacity": 0, "y": 50 }' data-whileInView='{ "opacity": 1, "y": 0 }' data-viewport='{ "once": true }' data-transition='{ "duration": 0.8 }'>
+            <div class="text-center">
+                <h1 class="main-title-text mb-4">社工組114年5月主管會議提報資料</h1>
+                <p class="text-2xl text-gray-400 eng-accent">Social Work Team / May 2024 Management Meeting Report</p>
+                <div class="mt-12">
+                    <p class="text-xl">報告人 <span class="highlight-blue text-2xl font-semibold">社工主任 吳啟森</span></p><p class="eng-accent">Presenter: Director WU QI-SEN</p>
+                </div><i class="fas fa-angle-down fa-2x mt-24 animate-bounce text-gray-500"></i>
+            </div>
+        </motion.section>
+
+        <!-- Page 2: Executive Summary -->
+        <motion.section class="report-section" data-initial='{ "opacity": 0 }' data-whileInView='{ "opacity": 1 }' data-viewport='{ "once": true }' data-transition='{ "duration": 0.5, "delay": 0.2 }'>
+            <h2 class="main-title-text mb-12 text-center"><span class="highlight-green">執行摘要</span> <span class="eng-accent block">Executive Summary</span></h2>
+            <div class="bento-grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                <motion.div class="bento-cell lg:col-span-2 bg-highlight-blue-gradient" data-initial='{ "opacity": 0, "scale": 0.9 }' data-whileInView='{ "opacity": 1, "scale": 1 }' data-viewport='{ "once": true }' data-transition='{ "duration": 0.5, "delay": 0.1 }'>
+                    <h3 class="sub-title-text mb-2">服務人數概況</h3><p class="eng-accent mb-4">Service Volume Overview</p>
+                    <p>114年4月服務人數較3月<strong class="highlight-green">略增</strong>，惟較113年同期<strong class="highlight-pink">減少約30人</strong>。</p>
+                    <p>主因113年下半年服務人數減少，致本年度1-4月人數雖有增加趨勢，但仍低於113年同期。</p>
+                </motion.div>
+                <motion.div class="bento-cell text-center bg-highlight-green-gradient" data-initial='{ "opacity": 0, "scale": 0.9 }' data-whileInView='{ "opacity": 1, "scale": 1 }' data-viewport='{ "once": true }' data-transition='{ "duration": 0.5, "delay": 0.2 }'>
+                    <p class="eng-accent mb-2">Apr 2024 vs Apr 2023</p><p class="super-text highlight-pink">-30</p><p class="text-lg">服務人數差異</p>
+                </motion.div>
+                <motion.div class="bento-cell bg-highlight-pink-gradient" data-initial='{ "opacity": 0, "scale": 0.9 }' data-whileInView='{ "opacity": 1, "scale": 1 }' data-viewport='{ "once": true }' data-transition='{ "duration": 0.5, "delay": 0.3 }'>
+                    <h3 class="sub-title-text mb-2">補助金額趨勢</h3><p class="eng-accent mb-4">Subsidy Amount Trends</p>
+                    <p>114年1-4月補助金額<strong class="highlight-green">均高於</strong>113年同期。</p>
+                    <p>長照案補助增加<strong class="highlight-green">20萬餘元</strong>，社會局補助增加<strong class="highlight-green">23萬餘元</strong>。</p>
+                </motion.div>
+                <motion.div class="bento-cell lg:col-span-2 bg-highlight-blue-gradient" data-initial='{ "opacity": 0, "scale": 0.9 }' data-whileInView='{ "opacity": 1, "scale": 1 }' data-viewport='{ "once": true }' data-transition='{ "duration": 0.5, "delay": 0.4 }'>
+                    <h3 class="sub-title-text mb-2">113年餐食結案主因</h3><p class="eng-accent mb-4">Primary Reasons for Meal Service Closure (2023)</p>
+                    <p>主要原因為<strong class="highlight-pink">健康狀況變化</strong> (34.29%) 及 <strong class="highlight-pink">服務資格或需求不符/改變</strong> (34.29%)。</p>
+                    <p>「餐食適應問題」及「轉換服務單位」合計為第三主因。</p>
+                </motion.div>
+            </div>
+        </motion.section>
+
+        <!-- Page 3: Service Numbers Analysis -->
+        <motion.section class="report-section" data-initial='{ "opacity": 0 }' data-whileInView='{ "opacity": 1 }' data-viewport='{ "once": true }' data-transition='{ "duration": 0.5, "delay": 0.2 }'>
+            <h2 class="main-title-text mb-12 text-center"><span class="highlight-blue">服務人數分析</span> <span class="eng-accent block">Service Numbers Analysis</span></h2>
+            <p class="text-center mb-8 max-w-3xl">114年4月較3月服務人數略增，惟較113年同期減少約30人，初判因113年下半年服務人數減少，致本年度1-4月人數雖有增加趨勢，但仍低於113年同期人數。</p>
+            <div class="bento-grid grid-cols-1 lg:grid-cols-3 gap-6 w-full">
+                <motion.div class="bento-cell" data-initial='{ "opacity": 0, "y": 20 }' data-whileInView='{ "opacity": 1, "y": 0 }' data-viewport='{ "once": true }' data-transition='{ "duration": 0.5, "delay": 0.1 }'><h3 class="sub-title-text mb-4 text-center">114年4月服務人數</h3><table class="min-w-full"><thead><tr><th>類別</th><th>長照案</th><th>社會局</th><th>自費</th><th>小計</th></tr></thead><tbody><tr><td>午餐</td><td>784</td><td>86</td><td>167</td><td>1037</td></tr><tr><td>中晚餐</td><td>279</td><td>23</td><td>0</td><td>302</td></tr><tr><td>晚餐</td><td>219</td><td>8</td><td>36</td><td>263</td></tr><tr><td>小計</td><td>1282</td><td>117</td><td rowspan="2">203</td><td>1602</td></tr><tr><td>合計</td><td colspan="2">1399</td><td></td></tr></tbody></table></motion.div>
+                <motion.div class="bento-cell" data-initial='{ "opacity": 0, "y": 20 }' data-whileInView='{ "opacity": 1, "y": 0 }' data-viewport='{ "once": true }' data-transition='{ "duration": 0.5, "delay": 0.2 }'><h3 class="sub-title-text mb-4 text-center">113年4月服務人數</h3><table><thead><tr><th>類別</th><th>長照案</th><th>社會局</th><th>自費</th><th>小計</th></tr></thead><tbody><tr><td>午餐</td><td>811</td><td>81</td><td>166</td><td>1058</td></tr><tr><td>中晚餐</td><td>303</td><td>17</td><td>2</td><td>322</td></tr><tr><td>晚餐</td><td>215</td><td>6</td><td>35</td><td>256</td></tr><tr><td>小計</td><td>1329</td><td>104</td><td rowspan="2">203</td><td>1636</td></tr><tr><td>合計</td><td colspan="2">1433</td><td></td></tr></tbody></table></motion.div>
+                <motion.div class="bento-cell" data-initial='{ "opacity": 0, "y": 20 }' data-whileInView='{ "opacity": 1, "y": 0 }' data-viewport='{ "once": true }' data-transition='{ "duration": 0.5, "delay": 0.3 }'><h3 class="sub-title-text mb-4 text-center">114年3月服務人數</h3><table><thead><tr><th>類別</th><th>長照案</th><th>社會局</th><th>自費</th><th>小計</th></tr></thead><tbody><tr><td>午餐</td><td>783</td><td>88</td><td>170</td><td>1041</td></tr><tr><td>中晚餐</td><td>274</td><td>22</td><td>0</td><td>296</td></tr><tr><td>晚餐</td><td>217</td><td>9</td><td>34</td><td>260</td></tr><tr><td>小計</td><td>1274</td><td>119</td><td rowspan="2">204</td><td>1597</td></tr><tr><td>合計</td><td colspan="2">1393</td><td></td></tr></tbody></table></motion.div>
+            </div>
+            <motion.div class="bento-cell w-full mt-8" data-initial='{ "opacity": 0, "y": 20 }' data-whileInView='{ "opacity": 1, "y": 0 }' data-viewport='{ "once": true }' data-transition='{ "duration": 0.5, "delay": 0.4 }'>
+                <h3 class="sub-title-text mb-4 text-center">114 VS. 113年1-4月送餐人數統計圖</h3>
+                <div class="chart-container fixed-height-450">
+                    <canvas id="serviceNumbersChart"></canvas>
+                </div>
+            </motion.div>
+        </motion.section>
+
+        <!-- Page 4: Subsidy Analysis -->
+        <motion.section class="report-section" data-initial='{ "opacity": 0 }' data-whileInView='{ "opacity": 1 }' data-viewport='{ "once": true }' data-transition='{ "duration": 0.5, "delay": 0.2 }'>
+            <h2 class="main-title-text mb-12 text-center"><span class="highlight-green">補助情形分析</span> <span class="eng-accent block">Subsidy Analysis</span></h2>
+            <p class="text-center mb-8 max-w-3xl">114年1-4月均高於113年同期補助金額，其中長照案補助增加20萬餘元、社會局補助(含年菜捐款)增加23萬餘元。研判除社會局餐食補助金額提高外，爭取最大化年菜捐款亦增加補助金額。</p>
+            <div class="bento-grid grid-cols-1 lg:grid-cols-2 gap-6 w-full">
+                <motion.div class="bento-cell" data-initial='{ "opacity": 0, "x": -20 }' data-whileInView='{ "opacity": 1, "x": 0 }' data-viewport='{ "once": true }' data-transition='{ "duration": 0.5, "delay": 0.1 }'><h3 class="sub-title-text mb-4 text-center">114年度補助金額</h3><table><thead><tr><th>月份</th><th>部份負擔</th><th>長照2.0</th><th>期中(末)核銷</th><th>獨老身障</th><th>年菜捐款</th><th>合計</th></tr></thead><tbody><tr><td>1月</td><td>57,400</td><td>2,473,740</td><td>-</td><td>-</td><td>-</td><td>2,531,140</td></tr><tr><td>2月</td><td>56,180</td><td>2,403,040</td><td>-</td><td>-</td><td>240,300</td><td>2,699,520</td></tr><tr><td>3月</td><td>61,300</td><td>2,572,620</td><td>-</td><td>1,042,900</td><td>-</td><td>3,676,820</td></tr><tr><td>4月</td><td>58,960</td><td>2,463,390</td><td>-</td><td>-</td><td>-</td><td>2,522,350</td></tr><tr><td>總計</td><td>233,840</td><td>9,912,790</td><td>-</td><td>1,042,900</td><td>240,300</td><td>11,429,830</td></tr></tbody></table></motion.div>
+                <motion.div class="bento-cell" data-initial='{ "opacity": 0, "x": 20 }' data-whileInView='{ "opacity": 1, "x": 0 }' data-viewport='{ "once": true }' data-transition='{ "duration": 0.5, "delay": 0.2 }'><h3 class="sub-title-text mb-4 text-center">113年度補助金額</h3><table><thead><tr><th>月份</th><th>部份負擔</th><th>長照2.0</th><th>期中(末)核銷</th><th>獨老身障</th><th>年菜捐款</th><th>合計</th></tr></thead><tbody><tr><td>1月</td><td>66,798</td><td>2,576,380</td><td>-</td><td>-</td><td>-</td><td>2,643,178</td></tr><tr><td>2月</td><td>55,036</td><td>2,217,220</td><td>-</td><td>-</td><td>100,000</td><td>2,372,256</td></tr><tr><td>3月</td><td>64,170</td><td>2,516,280</td><td>-</td><td>908,111</td><td>40,000</td><td>3,528,561</td></tr><tr><td>4月</td><td>60,410</td><td>2,401,610</td><td>-</td><td>-</td><td>-</td><td>2,462,020</td></tr><tr><td>總計</td><td>246,414</td><td>9,711,490</td><td>-</td><td>908,111</td><td>140,000</td><td>11,006,015</td></tr></tbody></table></motion.div>
+            </div>
+            <motion.div class="bento-cell w-full mt-8" data-initial='{ "opacity": 0, "y": 20 }' data-whileInView='{ "opacity": 1, "y": 0 }' data-viewport='{ "once": true }' data-transition='{ "duration": 0.5, "delay": 0.3 }'>
+                <h3 class="sub-title-text mb-4 text-center">114 VS. 113年送餐補助統計圖</h3>
+                <div class="chart-container fixed-height-400">
+                    <canvas id="subsidyChart"></canvas>
+                </div>
+            </motion.div>
+        </motion.section>
+
+        <!-- Page 5: Recent Work Focus -->
+        <motion.section class="report-section" data-initial='{ "opacity": 0 }' data-whileInView='{ "opacity": 1 }' data-viewport='{ "once": true }' data-transition='{ "duration": 0.5, "delay": 0.2 }'>
+            <h2 class="main-title-text mb-12 text-center"><span class="highlight-pink">近期工作重點</span> <span class="eng-accent block">Recent Work Focus</span></h2>
+            <div class="bento-grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-5xl">
+                <motion.div class="bento-cell bg-highlight-blue-gradient" data-initial='{ "opacity": 0, "y": 20 }' data-whileInView='{ "opacity": 1, "y": 0 }' data-viewport='{ "once": true }' data-transition='{ "duration": 0.5, "delay": 0.1 }'><h3 class="sub-title-text mb-2"><i class="fas fa-users-gear mr-3 highlight-blue"></i> 社會局評鑑</h3><p class="eng-accent mb-4">Social Bureau Evaluation</p><p>獨老身障送餐評鑑，預計於<strong class="highlight-blue">114年7月3日(四)</strong>執行。請相關組室協助完成評鑑整備事宜。</p></motion.div>
+                <motion.div class="bento-cell bg-highlight-green-gradient" data-initial='{ "opacity": 0, "y": 20 }' data-whileInView='{ "opacity": 1, "y": 0 }' data-viewport='{ "once": true }' data-transition='{ "duration": 0.5, "delay": 0.2 }'><h3 class="sub-title-text mb-2"><i class="fas fa-chalkboard-teacher mr-3 highlight-green"></i> 志工教育訓練</h3><p class="eng-accent mb-4">Volunteer Training</p><p>訂於<strong class="highlight-green">114年6月21日(六)</strong>假宜豐園婚宴會館舉辦。後續細節請志工組協助轉知本會志工。</p></motion.div>
+                <motion.div class="bento-cell bg-highlight-pink-gradient" data-initial='{ "opacity": 0, "y": 20 }' data-whileInView='{ "opacity": 1, "y": 0 }' data-viewport='{ "once": true }' data-transition='{ "duration": 0.5, "delay": 0.3 }'><h3 class="sub-title-text mb-2"><i class="fas fa-bell-slash mr-3 highlight-pink"></i> 停餐預警功能</h3><p class="eng-accent mb-4">Meal Suspension Alert System</p><p>送餐管理系統新增「停餐預警通知」功能，測試無誤後更新至正式系統，利於個案停餐追蹤管制。</p></motion.div>
+                <motion.div class="bento-cell" data-initial='{ "opacity": 0, "y": 20 }' data-whileInView='{ "opacity": 1, "y": 0 }' data-viewport='{ "once": true }' data-transition='{ "duration": 0.5, "delay": 0.4 }'><h3 class="sub-title-text mb-2"><i class="fas fa-clipboard-check mr-3 text-gray-400"></i> APP關懷紀錄</h3><p class="eng-accent mb-4">APP Care Record Logging</p><p>請交通室協助叮嚀送餐員落實「送餐APP關懷紀錄」填寫，確認個案在家領餐與落實關懷服務。</p></motion.div>
+            </div>
+        </motion.section>
+
+        <!-- Page 6: Case Closure Analysis - Overview & Regional -->
+        <motion.section
+            class="report-section"
+            data-initial='{ "opacity": 0 }'
+            data-whileInView='{ "opacity": 1 }'
+            data-viewport='{ "once": true }'
+            data-transition='{ "duration": 0.5, "delay": 0.2 }'
+        >
+            <h2 class="main-title-text mb-6 text-center"><span class="highlight-blue">113年餐食結案原因分析 (1/2)</span></h2>
+            <p class="eng-accent mb-10 block text-center">Analysis of Meal Service Closure Reasons (2023) - Part 1</p>
+            <div class="bento-grid grid-cols-1 lg:grid-cols-5 gap-6 w-full">
+                <motion.div class="bento-cell lg:col-span-2" data-initial='{ "opacity": 0, "scale": 0.9 }' data-whileInView='{ "opacity": 1, "scale": 1 }' data-viewport='{ "once": true }' data-transition='{ "duration": 0.5, "delay": 0.1 }'>
+                    <h3 class="sub-title-text mb-2"><i class="fas fa-users mr-3 highlight-blue"></i> 研究對象與方法</h3>
+                    <p class="eng-accent mb-4">Research Subjects & Methods</p>
+                    <p>以本會113年長照案及獨老身障案等送餐服務平均每月<strong class="highlight-blue">921人</strong>為研究母群體。</p>
+                    <p>由「銀巷食光送餐管理系統」下載113年期間個案餐食服務結案資料，研究對象涵蓋<strong class="highlight-blue">175筆</strong>餐食服務結案個案 (原253筆，移除同個案多餐結案78筆)。</p>
+                </motion.div>
+                <motion.div class="bento-cell lg:col-span-3" data-initial='{ "opacity": 0, "scale": 0.9 }' data-whileInView='{ "opacity": 1, "scale": 1 }' data-viewport='{ "once": true }' data-transition='{ "duration": 0.5, "delay": 0.2 }'>
+                    <h3 class="sub-title-text mb-2"><i class="fas fa-map-marked-alt mr-3 highlight-green"></i> 結案個案區域分佈</h3>
+                    <p class="eng-accent mb-4">Regional Distribution of Closed Cases</p>
+                    <table>
+                        <thead><tr><th>區域分類</th><th>包含區域</th><th>數量</th><th>百分比 (%)</th></tr></thead>
+                        <tbody>
+                            <tr><td>山區</td><td>后里、豐原、神岡、潭子、大雅</td><td class="highlight-green font-bold">82</td><td class="highlight-green font-bold">46.86</td></tr>
+                            <tr><td>海區</td><td>沙鹿、梧棲、大肚、龍井</td><td>61</td><td>34.86</td></tr>
+                            <tr><td>屯區及其他</td><td>霧峰、太平、北區、烏日、大里、南屯、北屯</td><td>32</td><td>18.29</td></tr>
+                            <tr><td>總計</td><td></td><td>175</td><td>100.00</td></tr>
+                        </tbody>
+                    </table>
+                    <div class="chart-container doughnut mt-6">
+                        <canvas id="regionalDistributionChart"></canvas>
+                    </div>
+                </motion.div>
+            </div>
+        </motion.section>
+
+        <!-- Page 7: Case Closure Analysis - Reasons & Cross-Analysis -->
+        <motion.section
+            class="report-section"
+            data-initial='{ "opacity": 0 }'
+            data-whileInView='{ "opacity": 1 }'
+            data-viewport='{ "once": true }'
+            data-transition='{ "duration": 0.5, "delay": 0.2 }'
+        >
+            <h2 class="main-title-text mb-6 text-center"><span class="highlight-pink">113年餐食結案原因分析 (2/2)</span></h2>
+            <p class="eng-accent mb-10 block text-center">Analysis of Meal Service Closure Reasons (2023) - Part 2</p>
+            <div class="bento-grid grid-cols-1 lg:grid-cols-2 gap-6 w-full">
+                <motion.div class="bento-cell" data-initial='{ "opacity": 0, "y": 20 }' data-whileInView='{ "opacity": 1, "y": 0 }' data-viewport='{ "once": true }' data-transition='{ "duration": 0.5, "delay": 0.1 }'>
+                    <h3 class="sub-title-text mb-2"><i class="fas fa-list-check mr-3 highlight-pink"></i> 結案原因類別分佈</h3>
+                    <p class="eng-accent mb-4">Distribution of Closure Reasons</p>
+                    <table>
+                        <thead><tr><th>結案原因類別</th><th>數量</th><th>百分比 (%)</th></tr></thead>
+                        <tbody>
+                            <tr><td>健康狀況變化</td><td class="highlight-pink font-bold">60</td><td class="highlight-pink font-bold">34.29</td></tr>
+                            <tr><td>服務資格或需求不符/改變</td><td class="highlight-pink font-bold">60</td><td class="highlight-pink font-bold">34.29</td></tr>
+                            <tr><td>個案/家屬主動選擇或取消</td><td>20</td><td>11.43</td></tr>
+                            <tr><td>餐食適應問題</td><td>15</td><td>8.57</td></tr>
+                            <tr><td>轉換服務單位</td><td>15</td><td>8.57</td></tr>
+                            <tr><td>行政流程原因(停餐逾期)</td><td>10</td><td>5.71</td></tr>
+                            <tr><td>其他/備註不明</td><td>5</td><td>2.86</td></tr>
+                            <tr><td>總計</td><td>175</td><td>100.00</td></tr>
+                        </tbody>
+                    </table>
+                    <div class="chart-container bar-horizontal mt-6">
+                        <canvas id="closureReasonsChart"></canvas>
+                    </div>
+                </motion.div>
+                <motion.div class="bento-cell" data-initial='{ "opacity": 0, "y": 20 }' data-whileInView='{ "opacity": 1, "y": 0 }' data-viewport='{ "once": true }' data-transition='{ "duration": 0.5, "delay": 0.2 }'>
+                    <h3 class="sub-title-text mb-2"><i class="fas fa-code-branch mr-3 highlight-blue"></i> 區域與原因交叉分析</h3>
+                    <p class="eng-accent mb-4">Cross-Analysis: Region & Reason</p>
+                    <table>
+                        <thead><tr><th>區域</th><th>健康變化 (%)</th><th>資格不符 (%)</th><th>主動取消 (%)</th><th>餐食適應 (%)</th><th>轉換單位 (%)</th><th>行政流程 (%)</th><th>其他 (%)</th><th>總數</th></tr></thead>
+                        <tbody>
+                            <tr><td>山區</td><td>25 (30.5%)</td><td>30 (36.6%)</td><td>9 (11.0%)</td><td>9 (11.0%)</td><td>5 (6.1%)</td><td>3 (3.7%)</td><td>1 (1.2%)</td><td>82</td></tr>
+                            <tr><td>海區</td><td>25 (41.0%)</td><td>20 (32.8%)</td><td>6 (9.8%)</td><td>4 (6.6%)</td><td>4 (6.6%)</td><td>2 (3.3%)</td><td>0 (0.0%)</td><td>61</td></tr>
+                            <tr><td>屯區及其他</td><td>10 (31.3%)</td><td>10 (31.3%)</td><td>5 (15.6%)</td><td>2 (6.3%)</td><td class="highlight-blue">6 (18.8%)</td><td class="highlight-blue">5 (15.6%)</td><td>4 (12.5%)</td><td>32</td></tr>
+                            <tr><td>總計</td><td>60</td><td>60</td><td>20</td><td>15</td><td>15</td><td>10</td><td>10</td><td>175</td></tr>
+                        </tbody>
+                    </table>
+                     <p class="mt-4 text-sm text-center">「屯區及其他」區域，<strong class="highlight-blue">轉換服務單位</strong>和<strong class="highlight-blue">行政流程原因</strong>佔比相對較高。</p>
+                    <div class="chart-container stacked-bar mt-6">
+                        <canvas id="crossAnalysisChart"></canvas>
+                    </div>
+                </motion.div>
+            </div>
+             <motion.div class="bento-cell w-full mt-8 lg:col-span-2" data-initial='{ "opacity": 0, "y": 20 }' data-whileInView='{ "opacity": 1, "y": 0 }' data-viewport='{ "once": true }' data-transition='{ "duration": 0.5, "delay": 0.3 }'>
+                <h3 class="sub-title-text mb-2"><i class="fas fa-comments mr-3 highlight-green"></i> 討論摘要</h3>
+                <p class="eng-accent mb-4">Discussion Summary</p>
+                <p>健康狀況變化 (如往生、入住機構) 是首要原因。其次是服務資格或需求改變 (如聘請外籍看護、長照計畫調整)。</p>
+                <p>「屯區及其他」區域轉換服務單位和行政流程 (停餐逾期) 佔比相對較高，顯示區域服務競爭激烈，個案選擇多，且停餐後追蹤管理需加強。</p>
+                <p>餐食適應問題整體佔比不高，但各區域均有出現，提示餐點品質與口味多樣性仍是影響滿意度的因素。</p>
+            </motion.div>
+        </motion.section>
+
+        <!-- Page 8: Action Items / To-Do List -->
+        <motion.section class="report-section" data-initial='{ "opacity": 0 }' data-whileInView='{ "opacity": 1 }' data-viewport='{ "once": true }' data-transition='{ "duration": 0.5, "delay": 0.2 }'>
+            <h2 class="main-title-text mb-12 text-center"><span class="highlight-green">結論與建議 / 行動事項</span></h2>
+            <p class="eng-accent mb-10 block text-center">Conclusions & Recommendations / Action Items</p>
+            <div class="bento-grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+                <motion.div class="bento-cell bg-highlight-blue-gradient" data-initial='{ "opacity": 0, "y": 20 }' data-whileInView='{ "opacity": 1, "y": 0 }' data-viewport='{ "once": true }' data-transition='{ "duration": 0.5, "delay": 0.1 }'><h3 class="sub-title-text mb-2"><i class="fas fa-notes-medical mr-2 highlight-blue"></i> 應對結案主因</h3><p class="eng-accent mb-3">Addressing Key Closure Reasons</p><ul class="list-disc list-inside space-y-1 text-sm"><li><strong>健康狀況變化:</strong> 保持與個管單位及家屬緊密聯繫，適時表達關懷。</li><li><strong>資格/需求改變:</strong> 加強長照政策宣導 (尤其外看聘用規定)，協助評估可行服務。</li></ul></motion.div>
+                <motion.div class="bento-cell bg-highlight-green-gradient" data-initial='{ "opacity": 0, "y": 20 }' data-whileInView='{ "opacity": 1, "y": 0 }' data-viewport='{ "once": true }' data-transition='{ "duration": 0.5, "delay": 0.2 }'><h3 class="sub-title-text mb-2"><i class="fas fa-concierge-bell mr-2 highlight-green"></i> 優化服務品質</h3><p class="eng-accent mb-3">Optimizing Service Quality</p><ul class="list-disc list-inside space-y-1 text-sm"><li><strong>餐食適應:</strong> 建立常態性個案餐食回饋機制，定期評估口味、菜色。</li><li><strong>溝通效率:</strong> 加強與個案、家屬及其他單位溝通，確保資訊即時傳達。</li></ul></motion.div>
+                <motion.div class="bento-cell bg-highlight-pink-gradient" data-initial='{ "opacity": 0, "y": 20 }' data-whileInView='{ "opacity": 1, "y": 0 }' data-viewport='{ "once": true }' data-transition='{ "duration": 0.5, "delay": 0.3 }'><h3 class="sub-title-text mb-2"><i class="fas fa-sitemap mr-2 highlight-pink"></i> 區域服務策略</h3><p class="eng-accent mb-3">Regional Service Strategies</p><ul class="list-disc list-inside space-y-1 text-sm"><li><strong>屯區及其他:</strong> 針對轉換單位和停餐逾期比例高情況，分析原因，評估調整服務模式或加強關懷追蹤。</li></ul></motion.div>
+                <motion.div class="bento-cell md:col-span-2 lg:col-span-3" data-initial='{ "opacity": 0, "y": 20 }' data-whileInView='{ "opacity": 1, "y": 0 }' data-viewport='{ "once": true }' data-transition='{ "duration": 0.5, "delay": 0.4 }'><h3 class="sub-title-text mb-2"><i class="fas fa-tasks mr-2 text-gray-400"></i> 完善行政流程</h3><p class="eng-accent mb-3">Refining Administrative Processes</p><ul class="list-disc list-inside space-y-1 text-sm"><li><strong>停餐個案追蹤:</strong> 建立更嚴謹的停餐個案追蹤流程，定期主動聯繫，評估恢復服務需求，避免因行政因素結案。</li><li><strong>評鑑整備:</strong> 相關組室依時程完成社會局評鑑整備 (7/3)。</li><li><strong>志工訓練:</strong> 志工組完成教育訓練籌備與通知 (6/21)。</li><li><strong>系統功能:</strong> IT部門確保停餐預警功能穩定上線。</li><li><strong>APP紀錄:</strong> 交通室持續督導送餐員APP紀錄填寫。</li></ul></motion.div>
+            </div>
+            <p class="mt-12 text-center text-lg">透過持續監控結案原因趨勢，並根據研究結果調整服務策略，<br/>期望進一步提升餐食服務效益和服務對象滿意度，達成服務使命。</p>
+        </motion.section>
+
+    </main>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        Chart.register(ChartDataLabels); // Register the datalabels plugin
+        Chart.defaults.set('plugins.datalabels', { // Default datalabels options
+            color: '#FFFFFF',
+            font: {
+                weight: 'bold'
+            },
+            formatter: (value, context) => {
+                // For stacked charts, you might want to sum or hide if value is 0
+                if (context.chart.options.scales.y?.stacked || context.chart.options.scales.x?.stacked) {
+                    return value > 0 ? value : '';
+                }
+                return value;
+            }
+        });
+
+        try {
+            // --- Service Numbers Chart (Page 3) ---
+            const ctxService = document.getElementById('serviceNumbersChart');
+            if (ctxService) {
+                new Chart(ctxService.getContext('2d'), {
+                    type: 'bar',
+                    data: {
+                        labels: ['1月', '2月', '3月', '4月'],
+                        datasets: [
+                            {
+                                label: '114年 合計 (Total 2024)',
+                                data: [1354, 1373, 1393, 1399], // from PDF image
+                                backgroundColor: 'rgba(0, 174, 239, 0.6)', // Blue
+                                borderColor: 'rgba(0, 174, 239, 1)',
+                                borderWidth: 2,
+                                yAxisID: 'y',
+                                type: 'line', // Render as line on top of bars
+                                tension: 0.3,
+                                order: 0 // Draw lines on top
+                            },
+                            {
+                                label: '113年 合計 (Total 2023)',
+                                data: [1407, 1401, 1428, 1433], // from PDF image
+                                backgroundColor: 'rgba(57, 255, 20, 0.6)', // Green
+                                borderColor: 'rgba(57, 255, 20, 1)',
+                                borderWidth: 2,
+                                yAxisID: 'y',
+                                type: 'line',
+                                tension: 0.3,
+                                order: 0
+                            },
+                            { // Bar for 114 total (can be thinner or just use the line)
+                                label: '114年 總計 (Bar)', // Hidden from legend if only for visual base
+                                data: [1354, 1373, 1393, 1399],
+                                backgroundColor: 'rgba(0, 174, 239, 0.3)',
+                                yAxisID: 'y',
+                                order: 1
+                            },
+                            { // Bar for 113 total
+                                label: '113年 總計 (Bar)',
+                                data: [1407, 1401, 1428, 1433],
+                                backgroundColor: 'rgba(57, 255, 20, 0.3)',
+                                yAxisID: 'y',
+                                order: 1
+                            },
+                            {
+                                label: '114年 自費 (Self-Paid 2024)',
+                                data: [219, 205, 211, 203], // from PDF image 114 自費
+                                backgroundColor: 'rgba(255, 0, 255, 0.4)', // Pink
+                                borderColor: 'rgba(255, 0, 255, 1)',
+                                borderWidth: 1,
+                                yAxisID: 'y2', // Use secondary axis
+                                order: 1 // Draw bars below lines
+                            },
+                            {
+                                label: '113年 自費 (Self-Paid 2023)',
+                                data: [222, 211, 204, 203], // from PDF image 113 自費
+                                backgroundColor: 'rgba(255, 100, 100, 0.4)', // Lighter Pink/Red
+                                borderColor: 'rgba(255, 100, 100, 1)',
+                                borderWidth: 1,
+                                yAxisID: 'y2',
+                                order: 1
+                            }
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        interaction: {
+                            mode: 'index',
+                            intersect: false,
+                        },
+                        plugins: {
+                            legend: { labels: { color: '#E0E0E0', font: {size: 11},
+                                filter: function(legendItem, chartData) {
+                                     // Hide "Bar" legends
+                                     return legendItem.text.indexOf('(Bar)') === -1;
+                                }
+                            } },
+                            tooltip: { titleFont: { weight: 'bold'}, bodyFont: { weight: 'normal'} }
+                        },
+                        scales: {
+                            x: { ticks: { color: '#AAA' }, grid: { color: '#333' } },
+                            y: {
+                                type: 'linear',
+                                display: true,
+                                position: 'left',
+                                min: 1000, // Adjust based on data range
+                                ticks: { color: '#00AEEF' },
+                                grid: { color: '#333' },
+                                title: { display: true, text: '總服務人數 (Total Served)', color: '#00AEEF'}
+                            },
+                            y2: {
+                                type: 'linear',
+                                display: true,
+                                position: 'right',
+                                min: 150, // Adjust based on data range
+                                max: 250,
+                                ticks: { color: '#FF00FF', stepSize: 20 },
+                                grid: { drawOnChartArea: false }, // only want the grid lines for one object
+                                title: { display: true, text: '自費人數 (Self-Paid)', color: '#FF00FF'}
+                            }
+                        }
+                    }
+                });
+            } else { console.error('Canvas ID "serviceNumbersChart" not found.'); }
+
+            // --- Subsidy Chart (Page 4) ---
+            const ctxSubsidy = document.getElementById('subsidyChart');
+            if (ctxSubsidy) {
+                new Chart(ctxSubsidy.getContext('2d'), {
+                    type: 'line',
+                    data: {
+                        labels: ['1月', '2月', '3月', '4月'],
+                        datasets: [
+                            {
+                                label: '114年 合計補助 (Total Subsidy 2024)',
+                                data: [2531140, 2699520, 3676820, 2522350],
+                                borderColor: 'rgba(0, 174, 239, 1)',     // Blue
+                                backgroundColor: 'rgba(0, 174, 239, 0.3)',
+                                borderWidth: 3,
+                                fill: true,
+                                tension: 0.3
+                            },
+                            {
+                                label: '113年 合計補助 (Total Subsidy 2023)',
+                                data: [2643178, 2372256, 3528561, 2462020],
+                                borderColor: 'rgba(57, 255, 20, 1)',      // Green
+                                backgroundColor: 'rgba(57, 255, 20, 0.3)',
+                                borderWidth: 3,
+                                fill: true,
+                                tension: 0.3
+                            }
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { labels: { color: '#E0E0E0', font: {size: 11} } },
+                            tooltip: {
+                                titleFont: { weight: 'bold'},
+                                bodyFont: { weight: 'normal'},
+                                callbacks: {
+                                    label: function(context) {
+                                        let label = context.dataset.label || '';
+                                        if (label) { label += ': '; }
+                                        if (context.parsed.y !== null) {
+                                            label += new Intl.NumberFormat('zh-TW', { style: 'currency', currency: 'TWD', minimumFractionDigits: 0 }).format(context.parsed.y);
+                                        }
+                                        return label;
+                                    }
+                                }
+                            }
+                        },
+                        scales: {
+                            x: { ticks: { color: '#AAA' }, grid: { color: '#333' } },
+                            y: {
+                                ticks: {
+                                    color: '#AAA',
+                                    callback: function(value, index, values) {
+                                        return '$' + (value / 1000000).toFixed(1) + 'M';
+                                    }
+                                },
+                                grid: { color: '#333' }
+                            }
+                        }
+                    }
+                });
+            } else { console.error('Canvas ID "subsidyChart" not found.'); }
+
+            // --- Regional Distribution Doughnut Chart (Page 6) ---
+            const ctxRegional = document.getElementById('regionalDistributionChart');
+            if (ctxRegional) {
+                new Chart(ctxRegional.getContext('2d'), {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['山區 (Mountain)', '海區 (Coastal)', '屯區及其他 (Tuen & Others)'],
+                        datasets: [{
+                            label: '結案個案區域分佈', data: [82, 61, 32],
+                            backgroundColor: ['rgba(0, 174, 239, 0.8)','rgba(57, 255, 20, 0.8)','rgba(255, 0, 255, 0.8)'],
+                            borderColor: ['rgba(0, 174, 239, 1)','rgba(57, 255, 20, 1)','rgba(255, 0, 255, 1)'],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true, maintainAspectRatio: false,
+                        plugins: {
+                            legend: { position: 'bottom', labels: { color: '#E0E0E0', font: { size: 12 } } },
+                            title: { display: true, text: '結案個案區域分佈 (數量)', color: '#E0E0E0', font: { size: 16, weight: 'bold' } },
+                            datalabels: {
+                                formatter: (value, ctx) => {
+                                    let sum = ctx.chart.data.datasets[0].data.reduce((a, b) => a + b, 0);
+                                    let percentage = (value * 100 / sum).toFixed(1) + "%";
+                                    return `${value}\n(${percentage})`;
+                                },
+                                color: '#fff', textAlign: 'center', font: { size: 10 }
+                            }
+                        }
+                    }
+                });
+            } else { console.error('Canvas ID "regionalDistributionChart" not found.'); }
+
+            // --- Closure Reasons Horizontal Bar Chart (Page 7) ---
+            const ctxClosureReasons = document.getElementById('closureReasonsChart');
+            if (ctxClosureReasons) {
+                new Chart(ctxClosureReasons.getContext('2d'), {
+                    type: 'bar',
+                    data: {
+                        labels: ['健康狀況變化','服務資格不符/改變','主動選擇或取消','餐食適應問題','轉換服務單位','行政流程原因','其他/備註不明'],
+                        datasets: [{
+                            label: '結案數量', data: [60, 60, 20, 15, 15, 10, 5],
+                            backgroundColor: ['rgba(255,0,255,0.7)','rgba(255,0,255,0.7)','rgba(0,174,239,0.7)','rgba(57,255,20,0.7)','rgba(0,174,239,0.5)','rgba(57,255,20,0.5)','rgba(170,170,170,0.7)'],
+                            borderColor: ['rgba(255,0,255,1)','rgba(255,0,255,1)','rgba(0,174,239,1)','rgba(57,255,20,1)','rgba(0,174,239,1)','rgba(57,255,20,1)','rgba(170,170,170,1)'],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+                        plugins: {
+                            legend: { display: false },
+                            title: { display: true, text: '113年餐食結案原因分佈 (數量)', color: '#E0E0E0', font: { size: 16, weight: 'bold' } },
+                            tooltip: { titleFont: { weight: 'bold'}, bodyFont: { weight: 'normal'} },
+                            datalabels: { anchor: 'end', align: 'right', offset: 4, font:{size:10} }
+                        },
+                        scales: {
+                            x: { ticks: { color: '#AAA', stepSize: 10 }, grid: { color: '#333' }, title: { display: true, text: '數量 (Count)', color: '#AAA' } },
+                            y: { ticks: { color: '#E0E0E0', font: {size: 10} }, grid: { color: '#333' } }
+                        }
+                    }
+                });
+            } else { console.error('Canvas ID "closureReasonsChart" not found.'); }
+
+            // --- Cross Analysis Stacked Bar Chart (Page 7) ---
+            const ctxCrossAnalysis = document.getElementById('crossAnalysisChart');
+            if (ctxCrossAnalysis) {
+                const reasonLabelsShort = ['健康變化', '資格不符', '主動取消', '餐食適應', '轉換單位', '行政流程', '其他'];
+                new Chart(ctxCrossAnalysis.getContext('2d'), {
+                    type: 'bar',
+                    data: {
+                        labels: reasonLabelsShort,
+                        datasets: [
+                            { label: '山區', data: [25, 30, 9, 9, 5, 3, 1], backgroundColor: 'rgba(0, 174, 239, 0.7)'},
+                            { label: '海區', data: [25, 20, 6, 4, 4, 2, 0], backgroundColor: 'rgba(57, 255, 20, 0.7)'},
+                            { label: '屯區及其他', data: [10, 10, 5, 2, 6, 5, 4], backgroundColor: 'rgba(255, 0, 255, 0.7)'}
+                        ]
+                    },
+                    options: {
+                        responsive: true, maintainAspectRatio: false,
+                        plugins: {
+                            title: { display: true, text: '各區域結案原因分佈 (數量)', color: '#E0E0E0', font: { size: 16, weight: 'bold' } },
+                            legend: { position: 'bottom', labels: { color: '#E0E0E0', font: {size: 11} } },
+                            tooltip: { mode: 'index', intersect: false, titleFont: { weight: 'bold'}, bodyFont: { weight: 'normal'} },
+                            datalabels: { display: true, color: '#fff', font: {size: 9},
+                                formatter: (value) => value > 0 ? value : ''
+                            }
+                        },
+                        scales: {
+                            x: { ticks: { color: '#AAA', font: {size: 10} }, grid: { color: '#333' }, stacked: true },
+                            y: { stacked: true, ticks: { color: '#AAA', stepSize: 10 }, grid: { color: '#333' }, title: { display: true, text: '數量 (Count)', color: '#AAA' } }
+                        }
+                    }
+                });
+            } else { console.error('Canvas ID "crossAnalysisChart" not found.'); }
+
+        } catch (e) {
+            console.error("Error initializing charts:", e);
+        }
+
+        // Custom Animation Logic (Same as before)
+        try {
+            const motionElements = document.querySelectorAll('motion\\.section, motion\\.div');
+            motionElements.forEach(el => {
+                const initial = JSON.parse(el.dataset.initial || '{}');
+                const whileInView = JSON.parse(el.dataset.whileinview || '{}');
+                const viewport = JSON.parse(el.dataset.viewport || '{ "once": true }');
+                const transition = JSON.parse(el.dataset.transition || '{}');
+                const applyStyles = (styles) => {
+                    for (const prop in styles) {
+                        if (prop === 'opacity' || prop === 'scale') { el.style[prop] = styles[prop]; }
+                        else if (prop === 'x' || prop === 'y') {
+                            const existingTransform = el.style.transform || "";
+                            let newTransform = existingTransform.replace(new RegExp(`${prop}\\([^)]*\\)`), "").trim();
+                            newTransform += ` ${prop}(${styles[prop]}${typeof styles[prop] === 'number' ? 'px' : ''})`;
+                            el.style.transform = newTransform.trim();
+                        }
+                    }
+                };
+                applyStyles(initial);
+                if (transition.duration || transition.delay) { el.style.transition = `all ${transition.duration || 0.5}s ease ${transition.delay || 0}s`; }
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            applyStyles(whileInView);
+                            if (viewport.once) { observer.unobserve(el); }
+                        } else { if (!viewport.once) { applyStyles(initial); } }
+                    });
+                }, { threshold: 0.1 });
+                observer.observe(el);
+            });
+        } catch (e) { console.error("Error applying animations:", e); }
+    });
+    </script>
+</body>
+</html>
